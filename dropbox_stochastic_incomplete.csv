@@ -1,0 +1,22 @@
+group,disease,touchstone,scenario,dropbox,certfile,filename,index_start,index_end
+IC-Garske,YF,201710gavi-2,yf-no-vaccination,/201710gavi-2-IC-Garske-YF-stochastic-runs,Katy Gaythorpe - cert15,Katy Gaythorpe - stochastic_burden_estimate_YF_no-vaccination_:index.csv,1,200
+IC-Garske,YF,201710gavi-2,yf-preventive-gavi,/201710gavi-2-IC-Garske-YF-stochastic-runs,Katy Gaythorpe - cert15,Katy Gaythorpe - stochastic_burden_estimate_YF_preventive-gavi_:index.csv,1,106
+IC-Garske,YF,201710gavi-2,yf-routine-gavi,/201710gavi-2-IC-Garske-YF-stochastic-runs,Katy Gaythorpe - cert15,NA,NA,NA
+Harvard-Sweet,HPV,201710gavi-2,hpv-campaign-gavi,/201710gavi-2-Harvard-Sweet-HPV-stochastic-runs,NA,NA,NA,NA
+Harvard-Sweet,HPV,201710gavi-2,hpv-no-vaccination,/201710gavi-2-Harvard-Sweet-HPV-stochastic-runs,NA,NA,NA,NA
+Harvard-Sweet,HPV,201710gavi-2,hpv-routine-gavi,/201710gavi-2-Harvard-Sweet-HPV-stochastic-runs,NA,NA,NA,NA
+JHU-Tam,Hib,201710gavi-2,hib-no-vaccination,/2010gavi-2-JHU-Tam-Hib-stochastic-runs,NA,NA,NA,NA
+JHU-Tam,Hib,201710gavi-2,hib-routine-gavi,/2010gavi-2-JHU-Tam-Hib-stochastic-runs,NA,NA,NA,NA
+JHU-Tam,PCV,201710gavi-4,pcv-no-vaccination,/2010gavi-4-JHU-Tam-PCV-stochastic-runs,NA,NA,NA,NA
+JHU-Tam,PCV,201710gavi-4,pcv-routine-gavi,/2010gavi-4-JHU-Tam-PCV-stochastic-runs,NA,NA,NA,NA
+JHU-Tam,Rota,201710gavi-2,rota-no-vaccination,/ 2010gavi-2-JHU-Tam-Rota-stochastic-runs,NA,NA,NA,NA
+JHU-Tam,Rota,201710gavi-2,rota-routine-gavi,/ 2010gavi-2-JHU-Tam-Rota-stochastic-runs,NA,NA,NA,NA
+Li,HepB,201710gavi-3,hepb-bd-routine-best-hepb-routine-with,/201710gavi-3-Li-HepB-stochastic-runs,NA,NA,NA,NA
+Li,HepB,201710gavi-3,hepb-bd-routine-with-hepb-routine-with,/201710gavi-3-Li-HepB-stochastic-runs,NA,NA,NA,NA
+Li,HepB,201710gavi-3,hepb-bd-routine-with,/201710gavi-3-Li-HepB-stochastic-runs,NA,NA,NA,NA
+Li,HepB,201710gavi-3,hepb-hepb-routine-with,/201710gavi-3-Li-HepB-stochastic-runs,NA,NA,NA,NA
+Li,HepB,201710gavi-3,hepb-no-vaccination,/201710gavi-3-Li-HepB-stochastic-runs,NA,NA,NA,NA
+PSU-Ferrari,Measles,201710gavi-2,measles-campaign-gavi,/201710gavi-2-PSU-Ferrari-Measles-stochastic-runs,NA,NA,NA
+PSU-Ferrari,Measles,201710gavi-2,measles-mcv1-gavi,/201710gavi-2-PSU-Ferrari-Measles-stochastic-runs,NA,NA,NA
+PSU-Ferrari,Measles,201710gavi-2,measles-mcv2-gavi,/201710gavi-2-PSU-Ferrari-Measles-stochastic-runs,NA,NA,NA
+PSU-Ferrari,Measles,201710gavi-2,measles-no-vaccination-gavi,/201710gavi-2-PSU-Ferrari-Measles-stochastic-runs,NA,NA,NA
