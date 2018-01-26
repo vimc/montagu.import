@@ -17,7 +17,7 @@ dat <- read_csv("dropbox_stochastic.csv")
 dat$dropbox <- sub("^/", "", dat$dropbox)
 
 ## Start with the first of these:
-d <- as.list(dat[1, ])
+d <- as.list(dat[4, ])
 montagu_burden_estimates(d$group, d$touchstone, d$scenario)
 
 ## First grab the certificate:
@@ -32,7 +32,8 @@ httr::with_verbose(
                                            cert$id))
 
 ## Download the first estimate file:
-filename <- download_estimate(d, 1L)
+dropbox_index(unique(dat$dropbox), "dropbox")
+filename <- download_estimate(d, 1L, "dropbox")
 
 ## This fails with 400:
 ## unknown-run-id: Unknown run ID with id '1'. Attempting to match against run parameter set null
