@@ -8,16 +8,16 @@ montagu::montagu_set_default_location("uat")
 montagu::montagu_authorise("test.user@imperial.ac.uk", "password")
 
 dat <- read_csv("dropbox_stochastic.csv")
-d <- as.list(dat[1, ])
+dat$dropbox <- sub("^/", "", dat$dropbox)
 
-montagu_burden_estimates(d$group, d$touchstone,
-                         d$scenario)
+d <- as.list(dat[1, ])
+montagu_burden_estimates(d$group, d$touchstone, d$scenario)
 
 
 ## First grab the certificate:
 cert <- download_certificate(d)
 
-path <- sprintf("File requests/%s", d$path)
+path <- sprintf("File requests/%s", d$dropbox)
 info <- rdrop2::drop_dir(path)
 
 id <- montagu_burden_estimate_set_create(d$group,
