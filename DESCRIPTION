@@ -1,0 +1,15 @@
+Package: montagu.import
+Title: Montagu Bulk Import
+Version: 0.0.1
+Description: Bulk import of stochastic estimates into Montagu
+License: MIT + file LICENSE
+Encoding: UTF-8
+Author: Rich FitzJohn
+Maintainer: Rich FitzJohn <rich.fitzjohn@gmail.com>
+Imports:
+    base64enc,
+    rdrop2,
+    httr,
+    jsonlite,
+    montagu,
+    vaultr

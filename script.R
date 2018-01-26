@@ -1,31 +1,37 @@
-## We need the dropbox token
-source("dropbox.R")
-source("util.R")
-dropbox_login()
+## API docs:
+## https://github.com/vimc/montagu-api/blob/master/spec/spec.md#burden-estimates
 
-devtools::load_all("~/Documents/Projects/epi/vimc/montagu-r")
+## Being developed at the same time as montagu-r so load that from
+## local sources too:
+
+devtools::load_all("../montagu-r")
+devtools::load_all()
+
+## All the auth:
+dropbox_login()
 montagu::montagu_set_default_location("uat")
 montagu::montagu_authorise("test.user@imperial.ac.uk", "password")
 
+## Our current set of files to upload:
 dat <- read_csv("dropbox_stochastic.csv")
 dat$dropbox <- sub("^/", "", dat$dropbox)
 
+## Start with the first of these:
 d <- as.list(dat[1, ])
 montagu_burden_estimates(d$group, d$touchstone, d$scenario)
-
 
 ## First grab the certificate:
 cert <- download_certificate(d)
 
-path <- sprintf("File requests/%s", d$dropbox)
-info <- rdrop2::drop_dir(path)
+## Then create a burden estimate set
+httr::with_verbose(
+  id <- montagu_burden_estimate_set_create(d$group,
+                                           d$touchstone,
+                                           d$scenario,
+                                           "stochastic",
+                                           cert$id))
 
-id <- montagu_burden_estimate_set_create(d$group,
-                                         d$touchstone,
-                                         d$scenario,
-                                         "stochastic",
-                                         cert$id)
-
+## Download the first estimate file:
 filename <- download_estimate(d, 1L)
 
 ## This fails with 400:
@@ -37,8 +43,7 @@ montagu_burden_estimate_set_upload(d$group,
                                    filename,
                                    TRUE)
 
-## And this fails with 403:
-## forbidden: You do not have sufficient permissions to access this resource. Missing these permissions: modelling-group:modelling_group_id/estimates.write
+## Clean up
 montagu_burden_estimate_set_clear(d$group,
                                   d$touchstone,
                                   d$scenario,

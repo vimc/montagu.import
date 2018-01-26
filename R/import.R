@@ -53,7 +53,3 @@ download_estimate <- function(d, index) {
 
   drop_download2(filename)
 }
-
-read_file <- function(path) {
-  rawToChar(readBin(path, raw(), file.size(path)))
-}
