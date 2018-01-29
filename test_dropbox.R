@@ -71,8 +71,10 @@ test_touchstone_consistency <- function() {
 
 
 dropboxes <- read.csv("dropbox_stochastic.csv", stringsAsFactors = FALSE)
-#root <- "https://www.dropbox.com/File Requests"
-root <- "E:/DROPBOX/Dropbox (SPH Imperial College)/File requests"
+#root <- "https://www.dropbox.com/File Requests/"
+
+# Expecting root to end with a backslash.
+root <- "E:/DROPBOX/Dropbox (SPH Imperial College)/File requests/"
 
 test_file_existence()
 test_touchstone_consistency()
