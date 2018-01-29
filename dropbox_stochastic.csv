@@ -7,6 +7,9 @@ CDA-Razavi,HepB,201710gavi-3,hepb-bd-routine-with-hepb-routine-with,/201710gavi-
 CDA-Razavi,HepB,201710gavi-3,hepb-bd-routine-with,/201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,19
 CDA-Razavi,HepB,201710gavi-3,hepb-hepb-routine-with,/201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,79
 CDA-Razavi,HepB,201710gavi-3,hepb-no-vaccination,/201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,98
+IC-Garske,YF,201710gavi-2,yf-no-vaccination,/201710gavi-2-IC-Garske-YF-stochastic-runs,Katy Gaythorpe - cert15,Katy Gaythorpe - stochastic_burden_estimate_YF_no-vaccination_:index.csv,1,200
+IC-Garske,YF,201710gavi-2,yf-preventive-gavi,/201710gavi-2-IC-Garske-YF-stochastic-runs,Katy Gaythorpe - cert15,Katy Gaythorpe - stochastic_burden_estimate_YF_preventive-gavi_:index.csv,1,200
+IC-Garske,YF,201710gavi-2,yf-routine-gavi,/201710gavi-2-IC-Garske-YF-stochastic-runs,Katy Gaythorpe - cert15,Katy Gaythorpe - stochastic_burden_estimate_YF_routine-gavi_:index.csv,1,200
 IC-Hallett,HepB,201710gavi-3,hepb-bd-routine-best-hepb-routine-with,/201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
 IC-Hallett,HepB,201710gavi-3,hepb-bd-routine-with-hepb-routine-with,/201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
 IC-Hallett,HepB,201710gavi-3,hepb-bd-routine-with,/201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
