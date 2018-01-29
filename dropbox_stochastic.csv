@@ -1,7 +1,7 @@
 group,disease,touchstone,scenario,dropbox,certfile,filename,index_start,index_end
-Cambridge-Trotter,MenA,201710gavi-2,mena-campaign-gavi,/201710gavi-2-Cambridge-Trotter-MenA-stochastic-runs,Andromachi Karachaliou - cert6,Andromachi Karachaliou - stochastic_burden_est_:disease-:group_:scenario_:index.csv,1,52
-Cambridge-Trotter,MenA,201710gavi-2,mena-no-vaccination,/201710gavi-2-Cambridge-Trotter-MenA-stochastic-runs,Andromachi Karachaliou - cert6,Andromachi Karachaliou - stochastic_burden_est_:disease-:group_:scenario_:index.csv,1,50
-Cambridge-Trotter,MenA,201710gavi-2,mena-routine-gavi,/201710gavi-2-Cambridge-Trotter-MenA-stochastic-runs,Andromachi Karachaliou - cert6,Andromachi Karachaliou - stochastic_burden_est_:disease-:group_:scenario_:index.csv,1,52
+Cambridge-Trotter,MenA,201710gavi-3,mena-campaign-gavi,/201710gavi-2-Cambridge-Trotter-MenA-stochastic-runs,Andromachi Karachaliou - cert6,Andromachi Karachaliou - stochastic_burden_est_:disease-:group_:scenario_:index.csv,1,52
+Cambridge-Trotter,MenA,201710gavi-3,mena-no-vaccination,/201710gavi-2-Cambridge-Trotter-MenA-stochastic-runs,Andromachi Karachaliou - cert6,Andromachi Karachaliou - stochastic_burden_est_:disease-:group_:scenario_:index.csv,1,50
+Cambridge-Trotter,MenA,201710gavi-3,mena-routine-gavi,/201710gavi-2-Cambridge-Trotter-MenA-stochastic-runs,Andromachi Karachaliou - cert6,Andromachi Karachaliou - stochastic_burden_est_:disease-:group_:scenario_:index.csv,1,52
 CDA-Razavi,HepB,201710gavi-3,hepb-bd-routine-best-hepb-routine-with,/201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,73
 CDA-Razavi,HepB,201710gavi-3,hepb-bd-routine-with-hepb-routine-with,/201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,92
 CDA-Razavi,HepB,201710gavi-3,hepb-bd-routine-with,/201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,19
@@ -21,9 +21,9 @@ LSHTM-Clark,PCV,201710gavi-4,pcv-no-vaccination,/2010gavi-4-LSHTM-Clark-PCV-stoc
 LSHTM-Clark,PCV,201710gavi-4,pcv-routine-gavi,/2010gavi-4-LSHTM-Clark-PCV-stochastic-runs,Kevin van Zandvoort - cert13,Kevin van Zandvoort - 20180122_stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
 LSHTM-Clark,Rota,201710gavi-2,rota-no-vaccination,/2010gavi-2-LSHTM-Clark-Rota-stochastic-runs,Kevin van Zandvoort - cert12,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
 LSHTM-Clark,Rota,201710gavi-2,rota-routine-gavi,/2010gavi-2-LSHTM-Clark-Rota-stochastic-runs,Kevin van Zandvoort - cert12,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
-LSHTM-Jit,HPV,201710gavi-2,hpv-campaign-gavi,/201710gavi-2-LSHTM-Jit-HPV-stochastic-runs,Kevin van Zandvoort - cert7,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
-LSHTM-Jit,HPV,201710gavi-2,hpv-no-vaccination,/201710gavi-2-LSHTM-Jit-HPV-stochastic-runs,Kevin van Zandvoort - cert7,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
-LSHTM-Jit,HPV,201710gavi-2,hpv-routine-gavi,/201710gavi-2-LSHTM-Jit-HPV-stochastic-runs,Kevin van Zandvoort - cert7,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
+LSHTM-Jit,HPV,201710gavi-3,hpv-campaign-gavi,/201710gavi-2-LSHTM-Jit-HPV-stochastic-runs,Kevin van Zandvoort - cert7,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
+LSHTM-Jit,HPV,201710gavi-3,hpv-no-vaccination,/201710gavi-2-LSHTM-Jit-HPV-stochastic-runs,Kevin van Zandvoort - cert7,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
+LSHTM-Jit,HPV,201710gavi-3,hpv-routine-gavi,/201710gavi-2-LSHTM-Jit-HPV-stochastic-runs,Kevin van Zandvoort - cert7,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
 LSHTM-Jit,Measles,201710gavi-2,measles-campaign-gavi,/201710gavi-2-LSHTM-Jit-Measles-stochastic-runs,Kevin van Zandvoort - cert10,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
 LSHTM-Jit,Measles,201710gavi-2,measles-mcv1-gavi,/201710gavi-2-LSHTM-Jit-Measles-stochastic-runs,Kevin van Zandvoort - cert10,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
 LSHTM-Jit,Measles,201710gavi-2,measles-mcv2-gavi,/201710gavi-2-LSHTM-Jit-Measles-stochastic-runs,Kevin van Zandvoort - cert10,Kevin van Zandvoort - stochastic_burden_template_:disease-:group-:scenario.csv,NA,NA
