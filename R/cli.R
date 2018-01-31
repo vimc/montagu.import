@@ -4,6 +4,9 @@ main_run <- function(clear, entry, index) {
     stop(sprintf("entry out of range [1, %d]", entry))
   }
   d <- as.list(dat[entry, ])
+
+  auth_from_env()
+
   if (clear) {
     stochastic_clear
   } else {
@@ -47,4 +50,22 @@ main_args <- function(args = commandArgs(TRUE)) {
 main <- function(args = commandArgs(TRUE)) {
   args <- main_args(args)
   main_run(args$clear, args$entry, args$index)
+}
+
+auth_from_env <- function() {
+  location <- Sys.getenv("MONTAGU_LOCATION", "")
+  username <- Sys.getenv("MONTAGU_USERNAME", "")
+  password <- Sys.getenv("MONTAGU_PASSWORD", "")
+
+  if (nzchar(location)) {
+    montagu::montagu_set_default_location(location)
+  }
+  if (nzchar(username)) {
+    options(montagu.username = username)
+  }
+  if (nzchar(password)) {
+    options(montagu.password = password)
+  }
+  montagu::montagu_authorise()
+  dropbox_login()
 }
