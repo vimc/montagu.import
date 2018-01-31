@@ -54,3 +54,13 @@ To clear out an import
 docker run -t -v ${PWD}:/import -w /import --user=$UID --env-file=env \
   vimc/montagu.import --clear 4
 ```
+
+Use from R (e.g., within another script) might find this useful:
+
+```r
+montagu.import::dropbox_login()
+montagu::montagu_set_default_location("uat")
+montagu::montagu_authorise("test.user@imperial.ac.uk", "password")
+dat <- read_csv("dropbox_stochastic.csv")
+montagu.import::stochastic_upload(as.list(dat[4, ]), index = 1L)
+```
