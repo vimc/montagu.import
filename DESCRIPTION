@@ -11,5 +11,5 @@ Imports:
     rdrop2,
     httr,
     jsonlite,
-    montagu,
+    montagu (>= 0.1.6),
     vaultr

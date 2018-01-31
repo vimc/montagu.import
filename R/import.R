@@ -1,68 +1,51 @@
-dropbox_base <- "File requests"
-
-dropbox_login <- function(renew = FALSE) {
-  vault_path <- "/secret/import/dropbox-token"
-  vault <- vaultr::vault_client()
-
-  token <- vault$read(vault_path)
-  if (renew || is.null(token)) {
-    token <- rdrop2::drop_auth(cache = FALSE)
-    token_str <- base64enc::base64encode(serialize(token, NULL, version = 2L))
-    vault$write(vault_path, list(value = token_str))
-  } else {
-    token <- base64enc::base64decode(vault$read(vault_path, "value"))
-    tmp <- tempfile()
-    writeBin(token, tmp)
-    on.exit(unlink(tmp))
-    token <- rdrop2::drop_auth(cache = FALSE, rdstoken = tmp)
+stochastic_upload <- function(d, local_path = "dropbox", lines = 20000,
+                              index = NULL) {
+  d$index <- index %||%  d$index_start:d$index_end
+  info <- read_dropbox_info(d$dropbox, local_path)
+  p_uploaded <- path_uploaded(local_path, d$dropbox)
+  if (file.exists(p_uploaded)) {
+    prev <- readRDS(p_uploaded)
+    if (setequal(prev$content_hash, info$content_hash)) {
+      message(d$dropbox, " is up to date")
+      return(FALSE)
+    }
   }
-  invisible(token)
+
+  cert <- download_certificate(d, info, local_path)
+  files <- download_estimates(d, info, local_path)
+
+  id <- montagu::montagu_burden_estimate_set_create(
+    d$group, d$touchstone, d$scenario, "stochastic", cert$id)
+  on.exit(
+    montagu::montagu_burden_estimate_set_clear(
+      d$group, d$touchstone, d$scenario, id))
+
+  last_file <- files[[length(files)]]
+  for (path in files) {
+    montagu::montagu_burden_estimate_set_upload(
+      d$group, d$touchstone, d$scenario, id, path, lines = lines,
+      keep_open = path != last_file)
+  }
+  on.exit()
+  TRUE
 }
 
-download_certificate <- function(d) {
-  path <- sprintf("File requests/%s/%s", d$dropbox, d$certfile)
-  tmp <- drop_download2(path)
-  on.exit(unlink(tmp))
-  ret <- jsonlite::fromJSON(read_file(tmp), simplifyVector = FALSE)
+stochastic_clear <- function(d) {
+  dat <- montagu::montagu_burden_estimates(d$group, d$touchstone, d$scenario)
+  f <- function(x) x$type$type == "stochastic" && x$status == "partial"
+  for (x in dat[vapply(dat, f, logical(1))]) {
+    montagu::montagu_burden_estimate_set_clear(
+      d$group, d$touchstone, d$scenario, x$id)
+  }
+}
+
+download_certificate <- function(d, info, local_path) {
+  cert <- download_dropbox_file(d$certfile, info, local_path)
+  ret <- jsonlite::fromJSON(read_file(cert), simplifyVector = FALSE)
   c(ret[[1]], ret[[2]])
 }
 
-drop_download2 <- function(path, dest = tempfile()) {
-  dest_dl <- paste0(dest, ".dl")
-  unlink(dest_dl)
-  on.exit(unlink(dest_dl))
-  dir.create(dirname(dest), FALSE, TRUE)
-  ans <- tryCatch(rdrop2::drop_download(path, dest_dl),
-                  http_error = function(e) e)
-  if (inherits(ans, "http_error")) {
-    info <- jsonlite::fromJSON(read_file(dest_dl), simplifyVector = FALSE)
-    if (!is.null(info$error_summary)) {
-      ans$message_original <- ans$message
-      ans$message <- sprintf("Error downloading file: %s", info$error_summary)
-    }
-    stop(ans)
-  }
-  file.rename(dest_dl, dest)
-  invisible(dest)
-}
-
-dropbox_content_hash <- function(path) {
-  con <- file(path, "rb")
-  on.exit(close(con))
-  block_size <- 4L * 1024L * 1024L
-
-  n <- ceiling(file.size(path) / block_size)
-  h <- vector("list", n)
-  for (i in seq_len(n)) {
-    bytes <- readBin(con, raw(1), block_size)
-    h[[i]] <- openssl::sha256(bytes)
-  }
-
-  as.character(openssl::sha256(unlist(h)))
-}
-
-## TODO: how will we cache these?  We can use md5 perhaps
-download_estimate <- function(d, index, local_path) {
+download_estimate <- function(d, index, info, local_path) {
   repl <- list(disease = d$disease,
                group = d$group,
                scenario = d$scenario,
@@ -72,37 +55,18 @@ download_estimate <- function(d, index, local_path) {
     filename <- sub(paste0(":", v), repl[[v]], filename, fixed = TRUE)
   }
 
-  index <- read_dropbox_index(d$dropbox, local_path)
-  i <- match(filename, index$name)
-  if (any(is.na(i))) {
-    stop("File not found: ",
-         paste0("\n  - %s", filename[is.na(i)], collapse = ""))
-  }
-
-  dest <- path_file(local_path, file.path(d$dropbox, filename))
-  hash_expected <- index$content_hash[i]
-
-  if (file.exists(dest)) {
-    if (dropbox_content_hash(dest) == hash_expected) {
-      message(dest, " is up to date")
-      return(dest)
-    }
-  }
-
-  drop_download2(file.path(dropbox_base, d$dropbox, filename), dest)
-
-  message("verifying...")
-  hash_received <- dropbox_content_hash(dest)
-  if (hash_expected != hash_received) {
-    file.rename(dest, paste0(dest, ".corrupted"))
-    stop("Downloaded file failed verification")
-  }
-
-  dest
+  download_dropbox_file(filename, info, local_path)
 }
 
-path_index <- function(local_path, dropbox_path) {
-  file.path(local_path, "index", dropbox_path)
+download_estimates <- function(d, info, local_path) {
+  message("Downloading all estimates for ", d$dropbox)
+  vapply(d$index, function(i)
+    download_estimate(d, i, info, local_path),
+    character(1))
+}
+
+path_info <- function(local_path, dropbox_path) {
+  file.path(local_path, "info", dropbox_path)
 }
 
 path_uploaded <- function(local_path, dropbox_path) {
@@ -110,27 +74,29 @@ path_uploaded <- function(local_path, dropbox_path) {
 }
 
 path_file <- function(local_path, dropbox_path) {
-  file.path(local_path, "files", dropbox_path)
+  file.path(local_path, "files", sub("^/", "", dropbox_path))
 }
 
+## Base remotely
+dropbox_base <- "File requests"
 path_dropbox <- function(dropbox_path) {
   file.path(dropbox_base, dropbox_path)
 }
 
-dropbox_index <- function(paths, local_path) {
+dropbox_info <- function(paths, local_path) {
   for (p in paths) {
-    message(sprintf("Fetching index for %s", p))
+    message(sprintf("Fetching directory information for %s", p))
     info <- rdrop2::drop_dir(path_dropbox(p))
-    dest <- path_index(local_path, p)
+    dest <- path_info(local_path, p)
     dir.create(dirname(dest), FALSE, TRUE)
     saveRDS(info, dest)
   }
 }
 
-read_dropbox_index <- function(path, local_path) {
-  p <- path_index(local_path, path)
+read_dropbox_info <- function(path, local_path) {
+  p <- path_info(local_path, path)
   if (!file.exists(p)) {
-    dropbox_index(path, local_path)
+    dropbox_info(path, local_path)
   }
   readRDS(p)
 }
