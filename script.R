@@ -1,5 +1,5 @@
 ## API docs:
-## https://github.com/vimc/montagu-api/blob/master/spec/spec.md#burden-estimates
+## https://github.com/vimc/montagu-api/blob/master/docs/spec/BurdenEstimates.md
 
 ## Being developed at the same time as montagu-r so load that from
 ## local sources too:
