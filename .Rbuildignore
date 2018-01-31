@@ -1,2 +1,4 @@
 \.csv$
-dropbox
+^dropbox$
+^env$
+^\.Renviron$
