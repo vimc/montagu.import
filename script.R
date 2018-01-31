@@ -24,25 +24,23 @@ montagu_burden_estimates(d$group, d$touchstone, d$scenario)
 cert <- download_certificate(d)
 
 ## Then create a burden estimate set
-httr::with_verbose(
-  id <- montagu_burden_estimate_set_create(d$group,
-                                           d$touchstone,
-                                           d$scenario,
-                                           "stochastic",
-                                           cert$id))
+id <- montagu_burden_estimate_set_create(d$group,
+                                         d$touchstone,
+                                         d$scenario,
+                                         "stochastic",
+                                         cert$id)
 
 ## Download the first estimate file:
-dropbox_index(unique(dat$dropbox), "dropbox")
+## dropbox_index(unique(dat$dropbox), "dropbox")
 filename <- download_estimate(d, 1L, "dropbox")
 
-## This fails with 400:
-## unknown-run-id: Unknown run ID with id '1'. Attempting to match against run parameter set null
 montagu_burden_estimate_set_upload(d$group,
                                    d$touchstone,
                                    d$scenario,
                                    id,
                                    filename,
-                                   TRUE)
+                                   lines = 5000,
+                                   keep_open = TRUE)
 
 ## Clean up
 montagu_burden_estimate_set_clear(d$group,
