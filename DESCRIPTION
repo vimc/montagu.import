@@ -8,8 +8,9 @@ Author: Rich FitzJohn
 Maintainer: Rich FitzJohn <rich.fitzjohn@gmail.com>
 Imports:
     base64enc,
-    rdrop2,
+    docopt,
     httr,
     jsonlite,
     montagu (>= 0.1.6),
+    rdrop2,
     vaultr
