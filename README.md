@@ -55,6 +55,8 @@ docker run -t -v ${PWD}:/import -w /import --user=$UID --env-file=env \
   vimc/montagu.import --clear 4
 ```
 
+The `--lines=N` argument can be used to control the chunk size of the upload.  This changes how responsive things are and when errors will be thrown.
+
 Use from R (e.g., within another script) might find this useful:
 
 ```r

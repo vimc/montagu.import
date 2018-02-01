@@ -1,4 +1,4 @@
-main_run <- function(clear, entry, index) {
+main_run <- function(clear, entry, index, lines) {
   dat <- read_csv("dropbox_stochastic.csv")
   if (entry > nrow(dat)) {
     stop(sprintf("entry out of range [1, %d]", entry))
@@ -10,7 +10,7 @@ main_run <- function(clear, entry, index) {
   if (clear) {
     stochastic_clear
   } else {
-    stochastic_upload(d, index = index)
+    stochastic_upload(d, index = index, lines = lines)
   }
 }
 
@@ -20,6 +20,7 @@ main_args <- function(args = commandArgs(TRUE)) {
 
    Options:
    --index=INDEX   Optionally upload a single index (or a..b for a range)
+   --lines=N       Number of lines to upload in each request [default: 20000]
    --keep-open     Keep the burden estimate set open
    --clear         Clear this entries incomplete uploads' -> usage
   oo <- options(warnPartialMatchArgs = FALSE)
@@ -42,14 +43,21 @@ main_args <- function(args = commandArgs(TRUE)) {
     }
   }
 
+  if (is.null(opts$lines)) {
+    lines <- 20000L
+  } else {
+    lines <- as.integer(opts$lines)
+  }
+
   list(clear = opts$clear,
        entry = as.integer(opts$entry),
+       lines = lines,
        index = index)
 }
 
 main <- function(args = commandArgs(TRUE)) {
   args <- main_args(args)
-  main_run(args$clear, args$entry, args$index)
+  main_run(args$clear, args$entry, args$index, args$lines)
 }
 
 auth_from_env <- function() {
