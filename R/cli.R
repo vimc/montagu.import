@@ -58,6 +58,7 @@ main_args <- function(args = commandArgs(TRUE)) {
 main <- function(args = commandArgs(TRUE)) {
   args <- main_args(args)
   main_run(args$clear, args$entry, args$index, args$lines)
+  invisible()
 }
 
 auth_from_env <- function() {
