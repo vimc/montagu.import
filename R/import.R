@@ -1,18 +1,21 @@
+## It would be possible to make this properly resumable, but that
+## requires that we can purge estimates just for the current file that
+## is being uploaded (or detect later that a partial file was
+## uploaded).  So I'm just doing it at the "everything done" level,
+## which is not ideal because that takes a few hours.
 stochastic_upload <- function(d, local_path = "dropbox", lines = 20000,
                               index = NULL) {
-  d$index <- index %||%  d$index_start:d$index_end
+  d$index <- index %||% d$index_start:d$index_end
+
   info <- read_dropbox_info(d$dropbox, local_path)
-  p_uploaded <- path_uploaded(local_path, d$dropbox)
-  if (file.exists(p_uploaded)) {
-    prev <- readRDS(p_uploaded)
-    if (setequal(prev$content_hash, info$content_hash)) {
-      message(d$dropbox, " is up to date")
-      return(FALSE)
-    }
+
+  if (stochastic_upload_status(d, info, local_path)) {
+    message("Upload is already complete")
+    return()
   }
 
   cert <- download_certificate(d, info, local_path)
-  files <- download_estimates(d, info, local_path)
+  files <- download_estimates(dropbox_filename(d), info, local_path)
 
   id <- montagu::montagu_burden_estimate_set_create(
     d$group, d$touchstone, d$scenario, "stochastic", cert$id)
@@ -26,8 +29,49 @@ stochastic_upload <- function(d, local_path = "dropbox", lines = 20000,
       d$group, d$touchstone, d$scenario, id, path, lines = lines,
       keep_open = path != last_file)
   }
+
+  browser()
+
+  stochastic_upload_status_set(d, id, info, local_path)
   on.exit()
+
+  ## At this point we need to write out something to the uploads path
+  ## so that we know what was uploaded.  I think that this is most
+  ## easily done with the info-by-files set?
   TRUE
+}
+
+stochastic_upload_status <- function(d, info = NULL, local_path = "dropbox") {
+  p_uploaded <- path_uploaded(local_path, d$dropbox, d$group, d$scenario)
+  if (!file.exists(p_uploaded)) {
+    return(FALSE)
+  }
+  prev <- readRDS(p_uploaded)
+
+  info <- info %||% read_dropbox_info(d$dropbox, local_path)
+  d$index <- d$index_start:d$index_end
+  files <- dropbox_filename(d)
+
+  stopifnot(all(files %in% info$name))
+
+  hash <- info$content_hash[match(files, info$name)]
+  setequal(prev$name, files) && setequal(prev$content_hash, hash)
+}
+
+stochastic_upload_status_set <- function(d, id, info, local_path = "dropbox") {
+  index_all <- d$index_start:d$index_end
+  if (!setequal(d$index, index_all)) {
+    return()
+  }
+  stopifnot(all(files %in% info$name))
+  hash <- info$content_hash[match(files, info$name)]
+  dat <- list(id = id,
+              name = files,
+              content_hash = hash)
+  p_uploaded <- path_uploaded(local_path, d$dropbox, d$group, d$scenario)
+  dir.create(dirname(p_uploaded), FALSE, TRUE)
+  message("Setting upload status")
+  saveRDS(dat, p_uploaded)
 }
 
 stochastic_clear <- function(d) {
@@ -45,32 +89,31 @@ download_certificate <- function(d, info, local_path) {
   c(ret[[1]], ret[[2]])
 }
 
-download_estimate <- function(d, index, info, local_path) {
+download_estimates <- function(filenames, info, local_path, check = TRUE) {
+  vapply(filenames, function(f)
+    download_dropbox_file(f, info, local_path),
+    character(1))
+}
+
+dropbox_filename <- function(d, index = d$index) {
   repl <- list(disease = d$disease,
                group = d$group,
                scenario = d$scenario,
-               index = index)
+               index = "%d")
   filename <- d$filename
   for (v in names(repl)) {
     filename <- sub(paste0(":", v), repl[[v]], filename, fixed = TRUE)
   }
-
-  download_dropbox_file(filename, info, local_path)
-}
-
-download_estimates <- function(d, info, local_path) {
-  message("Downloading all estimates for ", d$dropbox)
-  vapply(d$index, function(i)
-    download_estimate(d, i, info, local_path),
-    character(1))
+  sprintf(filename, index)
 }
 
 path_info <- function(local_path, dropbox_path) {
   file.path(local_path, "info", dropbox_path)
 }
 
-path_uploaded <- function(local_path, dropbox_path) {
-  file.path(local_path, "uploaded", dropbox_path)
+path_uploaded <- function(local_path, dropbox, group, scenario) {
+  file.path(local_path, "uploaded",
+            sprintf("%s__%s__%s.rds", dropbox, group, scenario))
 }
 
 path_file <- function(local_path, dropbox_path) {
