@@ -14,7 +14,7 @@ dropbox_content_hash <- function(path) {
   as.character(openssl::sha256(unlist(h)))
 }
 
-download_dropbox_file <- function(filename, info, local_path) {
+download_dropbox_file <- function(filename, info, local_path, check = TRUE) {
   i <- which(info$name == filename)
   if (length(i) != 1L) {
     stop(sprintf("Error getting file info for %s (check metadata csv)",
@@ -25,15 +25,19 @@ download_dropbox_file <- function(filename, info, local_path) {
   dest <- path_file(local_path, path)
   hash <- info$content_hash[[i]]
 
-  download_if_unchanged(path, dest, hash)
+  download_if_unchanged(path, dest, hash, check)
 }
 
-download_if_unchanged <- function(path, dest, hash) {
-  if (file.exists(dest) && dropbox_content_hash(dest) == hash) {
-    message(dest, " is up to date")
-    return(dest)
+download_if_unchanged <- function(path, dest, hash, check) {
+  if (file.exists(dest)) {
+    if (check && dropbox_content_hash(dest) == hash) {
+      message(dest, " is up to date")
+      return(dest)
+    } else if (!check) {
+      message(dest, " exists (but not checking if up to date)")
+      return(dest)
+    }
   }
-  drop_download2(path, dest)
 
   message("verifying...")
   hash_received <- dropbox_content_hash(dest)

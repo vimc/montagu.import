@@ -4,7 +4,7 @@
 ## uploaded).  So I'm just doing it at the "everything done" level,
 ## which is not ideal because that takes a few hours.
 stochastic_upload <- function(d, local_path = "dropbox", lines = 20000,
-                              index = NULL) {
+                              index = NULL, check = TRUE) {
   d$index <- index %||% d$index_start:d$index_end
 
   info <- read_dropbox_info(d$dropbox, local_path)
@@ -15,7 +15,7 @@ stochastic_upload <- function(d, local_path = "dropbox", lines = 20000,
   }
 
   cert <- download_certificate(d, info, local_path)
-  files <- download_estimates(dropbox_filename(d), info, local_path)
+  files <- download_estimates(dropbox_filename(d), info, local_path, check)
 
   id <- montagu::montagu_burden_estimate_set_create(
     d$group, d$touchstone, d$scenario, "stochastic", cert$id)
@@ -91,7 +91,7 @@ download_certificate <- function(d, info, local_path) {
 
 download_estimates <- function(filenames, info, local_path, check = TRUE) {
   vapply(filenames, function(f)
-    download_dropbox_file(f, info, local_path),
+    download_dropbox_file(f, info, local_path, check),
     character(1))
 }
 
