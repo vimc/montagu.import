@@ -63,6 +63,7 @@ stochastic_upload_status_set <- function(d, id, info, local_path = "dropbox") {
   if (!setequal(d$index, index_all)) {
     return()
   }
+  files <- dropbox_filename(d)
   stopifnot(all(files %in% info$name))
   hash <- info$content_hash[match(files, info$name)]
   dat <- list(id = id,
