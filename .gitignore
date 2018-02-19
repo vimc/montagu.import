@@ -2,3 +2,5 @@
 dropbox
 .Renviron
 env
+*.bak
+.Rproj.user
