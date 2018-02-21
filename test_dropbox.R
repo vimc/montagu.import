@@ -1,6 +1,6 @@
 library(jsonlite)
 
-host <- Sys.getenv("MONTAGU_DB_HOST", "support.montagu.dide.ic.ac.uk")
+host <- Sys.getenv("MONTAGU_DB_HOST", "production.montagu.dide.ic.ac.uk")
 port <- as.integer(Sys.getenv("MONTAGU_DB_PORT", 5432))
 user <- Sys.getenv("MONTAGU_DB_USER", "readonly")
 password <- Sys.getenv("MONTAGU_DB_PASSWORD", "changeme")
