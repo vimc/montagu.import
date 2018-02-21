@@ -1,6 +1,7 @@
 .httr-oauth
 dropbox
 .Renviron
+.Rhistory
 env
 *.bak
 .Rproj.user
