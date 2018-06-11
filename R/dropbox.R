@@ -39,6 +39,8 @@ download_if_unchanged <- function(path, dest, hash, check) {
     }
   }
 
+  drop_download2(path, dest)
+
   message("verifying...")
   hash_received <- dropbox_content_hash(dest)
   if (hash_received != hash) {

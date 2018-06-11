@@ -30,14 +30,9 @@ stochastic_upload <- function(d, local_path = "dropbox", lines = 20000,
       keep_open = path != last_file)
   }
 
-  browser()
-
   stochastic_upload_status_set(d, id, info, local_path)
   on.exit()
 
-  ## At this point we need to write out something to the uploads path
-  ## so that we know what was uploaded.  I think that this is most
-  ## easily done with the info-by-files set?
   TRUE
 }
 

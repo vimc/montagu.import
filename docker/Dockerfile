@@ -1,4 +1,4 @@
-FROM r-base:3.4.0
+FROM r-base:3.5.0
 
 RUN apt-get update || apt-get update && apt-get install -y \
   libcurl4-openssl-dev \
@@ -28,7 +28,7 @@ RUN install2.r \
         stringi \
         vaultr
 
-RUN Rscript -e 'remotes::install_github("vimc/montagu-r@i907")'
+RUN Rscript -e 'remotes::install_github("vimc/montagu-r")'
 
 COPY . /pkg
 RUN R CMD INSTALL /pkg && \
