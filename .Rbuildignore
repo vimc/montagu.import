@@ -2,3 +2,4 @@
 ^dropbox$
 ^env$
 ^\.Renviron$
+^\.httr-oauth$
