@@ -66,8 +66,7 @@ Use from R (e.g., within another script) might find this useful:
 
 ```r
 montagu.import::dropbox_login()
-montagu::montagu_set_default_location("uat")
-montagu::montagu_authorise("test.user@imperial.ac.uk", "password")
+montagu.import::montagu_login("uat")
 dat <- read_csv("dropbox_stochastic.csv")
 montagu.import::stochastic_upload(as.list(dat[4, ]), index = 1L)
 ```
