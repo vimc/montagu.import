@@ -28,7 +28,7 @@ RUN install2.r \
         stringi \
         vaultr
 
-RUN Rscript -e 'remotes::install_github("vimc/montagu-r@i907")'
+RUN Rscript -e 'remotes::install_github("vimc/montagu-r")'
 
 COPY . /pkg
 RUN R CMD INSTALL /pkg && \
