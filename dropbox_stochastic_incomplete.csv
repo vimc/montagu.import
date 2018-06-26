@@ -2,9 +2,3 @@ group,disease,touchstone,scenario,dropbox,certfile,filename,index_start,index_en
 Harvard-Sweet,HPV,201710gavi-5,hpv-campaign-gavi,201710gavi-2-Harvard-Sweet-HPV-stochastic-runs,NA,NA,NA,NA
 Harvard-Sweet,HPV,201710gavi-5,hpv-no-vaccination,201710gavi-2-Harvard-Sweet-HPV-stochastic-runs,NA,NA,NA,NA
 Harvard-Sweet,HPV,201710gavi-5,hpv-routine-gavi,201710gavi-2-Harvard-Sweet-HPV-stochastic-runs,NA,NA,NA,NA
-JHU-Tam,Hib,201710gavi-5,hib-no-vaccination,2010gavi5-JHU-Tam-Hib-stochastic-runs-folder5,CERTFILE,No Hib Batch %index.csv,1,14
-JHU-Tam,Hib,201710gavi-5,hib-routine-gavi,2010gavi5-JHU-Tam-Hib-stochastic-runs-folder5,CERTFILE,With Hib, PCV and Rota Batch :index.csv,1,14
-JHU-Tam,PCV,201710gavi-5,pcv-no-vaccination,2010gavi5-JHU-Tam-PCV-stochastic-runs-folder5,CERTFILE,No PCV Batch :index.csv,1,14
-JHU-Tam,PCV,201710gavi-5,pcv-routine-gavi,2010gavi5-JHU-Tam-PCV-stochastic-runs-folder5,CERTFILE,With Hib, PCV and Rota Batch :index.csv,1,14
-JHU-Tam,Rota,201710gavi-5,rota-no-vaccination,2010gavi5-JHU-Tam-Rota-stochastic-runs-folder5,CERTFILE,No Rota Batch :index.csv,1,14
-JHU-Tam,Rota,201710gavi-5,rota-routine-gavi,2010gavi5-JHU-Tam-Rota-stochastic-runs-folder5,CERTFILE,With Hib, PCV and Rota Batch :index.csv,1,14
