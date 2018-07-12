@@ -62,11 +62,43 @@ docker run -t -v ${PWD}:/import -w /import --user=$UID --env-file=env \
   vimc/montagu.import --index 1 --lines 50 4
 ```
 
-Use from R (e.g., within another script) might find this useful:
+## Doing the import from R
 
+Create a file `.Renviron` containing
+
+```
+VAULT_ADDR='https://support.montagu.dide.ic.ac.uk:8200'
+VAULT_AUTH_GITHUB_TOKEN=<your token>
+VAULTR_AUTH_METHOD=github
+```
+
+See [the `vaultr` documentation](https://github.com/vimc/vaultr#usage) for more details.
+
+### Installation
+
+```
+## install.packages(c("drat", "devtools")) # if needed
+devtools::install_github("karthik/rdrop2", upgrade_dependencies = FALSE)
+drat:::add("vimc")
+install.packages(c("docopt", "montagu", "vaultr"))
+devtools::install()
+```
+
+### Usage
+
+Then should be able to run these lines:
+
+montagu.import::dropbox_login()
 ```r
 montagu.import::dropbox_login()
-montagu.import::montagu_login("uat")
+montagu.import::montagu_login("production")
+```
+
+Use `uat` for testing, but be aware that it probably can't handle a full import.  You can still try an import with `index = 1` to import just the first section of results.
+
+To import the `i`th row of `dropbox_stochastic.csv` do:
+
+```r
 dat <- read_csv("dropbox_stochastic.csv")
-montagu.import::stochastic_upload(as.list(dat[4, ]), index = 1L)
+montagu.import::stochastic_upload(as.list(dat[i, ]))
 ```
