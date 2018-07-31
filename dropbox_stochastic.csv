@@ -7,6 +7,9 @@ CDA-Razavi,HepB,201710gavi-5,hepb-bd-routine-with-hepb-routine-with,201710gavi-3
 CDA-Razavi,HepB,201710gavi-5,hepb-bd-routine-with,201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,19
 CDA-Razavi,HepB,201710gavi-5,hepb-hepb-routine-with,201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,79
 CDA-Razavi,HepB,201710gavi-5,hepb-no-vaccination,201710gavi-3-CDA-Razavi-HepB-stochastic-runs,Devin Razavi-Shearer - certif,Devin Razavi-Shearer - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,98
+Harvard-Sweet,HPV,201710gavi-5,hpv-no-vaccination,201710gavi-5-Harvard-Sweet-HPV-stochastic-estimates,cert34,1. central_burden_template_:disease-:group No Vaccine_PSA-:index_07.02.18.csv,1,200
+Harvard-Sweet,HPV,201710gavi-5,hpv-routine-gavi,201710gavi-5-Harvard-Sweet-HPV-stochastic-estimates,cert34,2. central_burden_template_:disease-:group Routine_PSA-:index_07.02.18.csv,1,200
+Harvard-Sweet,HPV,201710gavi-5,hpv-campaign-gavi,201710gavi-5-Harvard-Sweet-HPV-stochastic-estimates,cert34,3. central_burden_template_:disease-:group Campaign_PSA-:index_07.02.18.csv,1,200
 IC-Garske,YF,201710gavi-5,yf-no-vaccination,201710gavi-2-IC-Garske-YF-stochastic-runs3,Katy Gaythorpe - cert20,Katy Gaythorpe - NEW_NEW_stochastic_burden_estimate_YF_no-vaccination_:index.csv,1,200
 IC-Garske,YF,201710gavi-5,yf-preventive-gavi,201710gavi-2-IC-Garske-YF-stochastic-runs3,Katy Gaythorpe - cert20,Katy Gaythorpe - NEW_NEW_stochastic_burden_estimate_YF_preventive-gavi_:index.csv,1,200
 IC-Garske,YF,201710gavi-5,yf-routine-gavi,201710gavi-2-IC-Garske-YF-stochastic-runs3,Katy Gaythorpe - cert20,Katy Gaythorpe - NEW_NEW_stochastic_burden_estimate_YF_routine-gavi_:index.csv,1,200
@@ -45,6 +48,6 @@ LSHTM-Jit,Measles,201710gavi-5,measles-no-vaccination,201710gavi-2-LSHTM-Jit-Mea
 OUCRU-Clapham,JE,201710gavi-5,je-campaign-gavi,201710gavi-2-OUCRU-Clapham-JE-stochastic-runs,Quaj Tran - cert4,Quaj Tran - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,200
 OUCRU-Clapham,JE,201710gavi-5,je-routine-gavi,201710gavi-2-OUCRU-Clapham-JE-stochastic-runs,Quaj Tran - cert4,Quaj Tran - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,200
 OUCRU-Clapham,JE,201710gavi-5,je-routine-no-vaccination,201710gavi-2-OUCRU-Clapham-JE-stochastic-runs,Quaj Tran - cert4,Quaj Tran - stochastic_burden_template_:disease-:group_:scenario_:index.csv,1,200
-PHE-Vynnycky,Rubella,201710gavi-5,rubella-campaign-gavi,201710gavi-2-PHE-Vynnycky-Rubella-stochastic-runs,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
-PHE-Vynnycky,Rubella,201710gavi-5,rubella-routine-gavi,201710gavi-2-PHE-Vynnycky-Rubella-stochastic-runs,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
-PHE-Vynnycky,Rubella,201710gavi-5,rubella-routine-no-vaccination,201710gavi-2-PHE-Vynnycky-Rubella-stochastic-runs,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
+PHE-Vynnycky,Rubella,201710gavi-5,rubella-campaign-gavi,201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
+PHE-Vynnycky,Rubella,201710gavi-5,rubella-routine-gavi,201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
+PHE-Vynnycky,Rubella,201710gavi-5,rubella-routine-no-vaccination,201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
