@@ -1,7 +1,7 @@
 library(jsonlite)
 
 host <- Sys.getenv("MONTAGU_DB_HOST", "production.montagu.dide.ic.ac.uk")
-port <- as.integer(Sys.getenv("MONTAGU_DB_PORT", 5432))
+port <- as.integer(Sys.getenv("MONTAGU_DB_PORT", 15432))
 user <- Sys.getenv("MONTAGU_DB_USER", "readonly")
 password <- Sys.getenv("MONTAGU_DB_PASSWORD", "changeme")
 
@@ -69,12 +69,58 @@ test_touchstone_consistency <- function() {
   }
 }
 
+test_scenario_existence <- function() {
+  for (s in seq_len(nrow(dropboxes))) {
+    scenario <- dropboxes$scenario[s]
+    group <- dropboxes$group[s]
+    touchstone <- dropboxes$touchstone[s]
+    
+    scenarios <- DBI::dbGetQuery(con, "
+      SELECT id FROM SCENARIO
+       WHERE touchstone=$1
+         AND scenario_description=$2", 
+      list(touchstone, scenario))$id
+    
+    if (length(scenarios)==0) {
+      message(sprintf("Touchstone/Scenario %s/%s not found",touchstone,scenario))
+    }
+    
+    resp_sets <- DBI::dbGetQuery(con, "
+      SELECT id FROM responsibility_set 
+       WHERE touchstone=$1 AND
+             modelling_group=$2", list(touchstone, group))$id
+    
+    if (length(resp_sets)==0) {
+      message(sprintf("No responsibility sets found for %s/%s", touchstone,group))
+    }
+    
+    found <- 0
+    
+    for (rs in seq_len(length(resp_sets))) {
+      scenarios <- DBI::dbGetQuery(con, "
+        SELECT scenario_description 
+          FROM responsibility 
+          JOIN scenario
+            ON responsibility.scenario = scenario.id
+         WHERE responsibility_set=$1", resp_sets[rs])$scenario_description
+      found <- found + sum(scenarios==scenario)
+      
+    }
+
+    if (found==0) {
+      message(sprintf("No scenario %s found for %s/%s", scenario, touchstone, group))
+    }
+
+  }
+}
+
 
 dropboxes <- read.csv("dropbox_stochastic.csv", stringsAsFactors = FALSE)
 #root <- "https://www.dropbox.com/File Requests/"
 
 # Expecting root to end with a backslash.
-root <- "E:/DROPBOX/Dropbox (SPH Imperial College)/File requests/"
+root <- "E:/Dropbox (SPH Imperial College)/File requests/"
 
 test_file_existence()
 test_touchstone_consistency()
+test_scenario_existence()
