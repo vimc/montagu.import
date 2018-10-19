@@ -13,11 +13,11 @@ Harvard-Sweet,HPV,201710gavi-5,hpv-campaign-gavi,201710gavi-5-Harvard-Sweet-HPV-
 IC-Garske,YF,201710gavi-5,yf-no-vaccination,201710gavi-2-IC-Garske-YF-stochastic-runs3,Katy Gaythorpe - cert20,Katy Gaythorpe - NEW_NEW_stochastic_burden_estimate_YF_no-vaccination_:index.csv,1,200
 IC-Garske,YF,201710gavi-5,yf-preventive-gavi,201710gavi-2-IC-Garske-YF-stochastic-runs3,Katy Gaythorpe - cert20,Katy Gaythorpe - NEW_NEW_stochastic_burden_estimate_YF_preventive-gavi_:index.csv,1,200
 IC-Garske,YF,201710gavi-5,yf-routine-gavi,201710gavi-2-IC-Garske-YF-stochastic-runs3,Katy Gaythorpe - cert20,Katy Gaythorpe - NEW_NEW_stochastic_burden_estimate_YF_routine-gavi_:index.csv,1,200
-IC-Hallett,HepB,201710gavi-5,hepb-bd-routine-best-hepb-routine-with,201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
-IC-Hallett,HepB,201710gavi-5,hepb-bd-routine-with-hepb-routine-with,201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
-IC-Hallett,HepB,201710gavi-5,hepb-bd-routine-with,201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
-IC-Hallett,HepB,201710gavi-5,hepb-hepb-routine-with,201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
-IC-Hallett,HepB,201710gavi-5,hepb-no-vaccination,201710gavi-3-Imperial-Hallett-HepB-stochastic-runs,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
+IC-Hallett,HepB,201710gavi-5,hepb-bd-routine-best-hepb-routine-with,201710gavi-5-Imperial-Hallett-HepB-stochastic-runs-Sep-18,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
+IC-Hallett,HepB,201710gavi-5,hepb-bd-routine-with-hepb-routine-with,201710gavi-5-Imperial-Hallett-HepB-stochastic-runs-Sep-18,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
+IC-Hallett,HepB,201710gavi-5,hepb-bd-routine-with,201710gavi-5-Imperial-Hallett-HepB-stochastic-runs-Sep-18,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
+IC-Hallett,HepB,201710gavi-5,hepb-hepb-routine-with,201710gavi-5-Imperial-Hallett-HepB-stochastic-runs-Sep-18,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
+IC-Hallett,HepB,201710gavi-5,hepb-no-vaccination,201710gavi-5-Imperial-Hallett-HepB-stochastic-runs-Sep-18,Margaret de Villiers - cert14,stochastic_burden_est_:scenario_:index.csv,1,200
 JHU-Tam,Hib,201710gavi-5,hib-no-vaccination-LiST,2010gavi5-JHU-Tam-Hib-stochastic-runs-folder5,cert26,No Hib Batch :index.csv,1,14
 JHU-Tam,Hib,201710gavi-5,hib-routine-gavi-LiST,2010gavi5-JHU-Tam-Hib-stochastic-runs-folder5,cert26,With Hib PCV and Rota Batch :index.csv,1,14
 JHU-Tam,PCV,201710gavi-5,pcv-no-vaccination-LiST,2010gavi5-JHU-Tam-PCV-stochastic-runs-folder5,cert27,No PCV Batch :index.csv,1,14
