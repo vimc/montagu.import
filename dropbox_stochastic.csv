@@ -51,3 +51,7 @@ OUCRU-Clapham,JE,201710gavi-5,je-routine-no-vaccination,201710gavi-2-OUCRU-Claph
 PHE-Vynnycky,Rubella,201710gavi-5,rubella-campaign-gavi,201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
 PHE-Vynnycky,Rubella,201710gavi-5,rubella-rcv2-gavi,201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_rubella-routine-gavi_:index.csv,1,200
 PHE-Vynnycky,Rubella,201710gavi-5,rubella-routine-no-vaccination,201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run,Timos Papadopoulos - cert3,stochastic_burden_estimate_:disease-:group_:scenario_:index.csv,1,200
+PSU-Ferrari,Measles,201710gavi-5,measles-campaign-gavi,201710gavi-5-PSU-Ferrari-Measles-stochastic-runs,Matthew Ferrari - cert18,Matthew Ferrari - stochastic_burden_sia_:disease-:group-5new.csv,NA,NA
+PSU-Ferrari,Measles,201710gavi-5,measles-mcv1-gavi,201710gavi-5-PSU-Ferrari-Measles-stochastic-runs,Matthew Ferrari - cert18,Matthew Ferrari - stochastic_burden_mcv1_:disease-:group-5new.csv,NA,NA
+PSU-Ferrari,Measles,201710gavi-5,measles-mcv2-gavi,201710gavi-5-PSU-Ferrari-Measles-stochastic-runs,Matthew Ferrari - cert18,Matthew Ferrari - stochastic_burden_mcv2_:disease-:group-5new.csv,NA,NA
+PSU-Ferrari,Measles,201710gavi-5,measles-no-vaccination,201710gavi-5-PSU-Ferrari-Measles-stochastic-runs,Matthew Ferrari - cert18,Matthew Ferrari - stochastic_burden_novax_:disease-:group-5new.csv,NA,NA
