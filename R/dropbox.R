@@ -72,7 +72,7 @@ drop_download2 <- function(path, dest = tempfile()) {
 
 dropbox_login <- function(renew = FALSE) {
   vault_path <- "/secret/import/dropbox-token"
-  vault <- vaultr::vault_client()
+  vault <- vaultr::vault_client(login = "github")
 
   token <- vault$read(vault_path)
   if (renew || is.null(token)) {
