@@ -13,4 +13,4 @@ Imports:
     jsonlite,
     montagu (>= 0.2.0),
     rdrop2,
-    vaultr
+    vaultr (>= 0.2.0)

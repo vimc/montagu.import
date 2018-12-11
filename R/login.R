@@ -1,5 +1,5 @@
 montagu_login <- function(name) {
-  vault <- vaultr::vault_client()
+  vault <- vaultr::vault_client(login = "github")
   if (name == "uat") {
     host <- "support.montagu.dide.ic.ac.uk"
     port <- 10443
