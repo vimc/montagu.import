@@ -113,7 +113,7 @@
 | Disease          | HPV |
 | :----------------|:-------------------------------------------------|
 | Folder           | 201804rfp-Harvard-Kim-HPV-stochastic-runs        |
-| Date Updated     | 2018-07-31                                       |
+| Date Updated     | 2018-06-12                                       |
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows    |
 | :------------- | :---: | :--: | :-------: | :--: | :----: | ------: |
@@ -232,7 +232,7 @@
 
 | Disease          | Measles |
 | :----------------|:----------------------------------------------------|
-| Folder           | 201710gavi-5-LSHTM-Jit-Measles-Stochastic-run       |
+| Folder           | 201710gavi-5-PSU-Ferrari-Measles-stochastic-runs    |
 | Date Updated     | 2018-07-09                                          |
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows        |
