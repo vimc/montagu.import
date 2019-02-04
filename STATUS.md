@@ -7,9 +7,11 @@
 ### CDA-Razavi
 
 | Disease          | HepB |
-| :----------------| :---------------------------------------------------|
-| Folder           | 201710gavi-3-CDA-Razavi-HepB-stochastic-runs        |
-| Date Updated     | 2018-01-17                                          |
+| :----------------| :--------------------------------------------|
+| Folder           | 201710gavi-3-CDA-Razavi-HepB-stochastic-runs |
+| Date Updated     | 2018-01-17                                   |
+| Model Run Cert   | 9                                            |
+| Parameters       | 2 per country + 24                           |
 
 | Scenario                          | Files | Runs | Countries | Ages | Years  | Rows         |
 | :-------------------------------- | :---: | :--: | :-------: | :--: | :----: | ------------:|
@@ -24,9 +26,11 @@
 ### IC-Hallett
 
 | Disease          | HepB |
-| :----------------| :-----------------------------------------------------------|
+| :----------------| :------------------------------------------|
 | Folder           | 201804rfp-IC-Hallett-HepB-stochastic-runs  |
-| Date Updated     | 2018-06-11                                                 |
+| Date Updated     | 2018-06-11                                 |
+| Model Run Cert   | 22                                         |
+| Parameters       | 2 per country + 2                          |
 
 | Scenario                          | Files | Runs | Countries | Ages | Years  | Rows     |
 | :-------------------------------- | :---: | :--: | :-------: | :--: | :----: | --------:|
@@ -40,6 +44,8 @@
 | :----------------| :----------------------------------------------------------|
 | Folder           | 201710gavi-5-Imperial-Hallett-HepB-stochastic-runs-Sep-18  |
 | Date Updated     | 2018-10-13                                                 |
+| Model Run Cert   | 38                                                         |
+| Parameters       | 2 per country + 2                                          |
 
 | Scenario                          | Files | Runs | Countries | Ages | Years  | Rows         |
 | :-------------------------------- | :---: | :--: | :-------: | :--: | :----: | ------------:|
@@ -54,9 +60,12 @@
 ### Li
 
 | Disease          | HepB |
-| :----------------| :----------------------------------------------------------|
+| :----------------| :-------------------------------------|
 | Folder           | 201710gavi-3-Li-HepB-stochastic-runs  |
-| Date Updated     | 2018-10-13                                                 |
+| Date Updated     | 2018-10-13                            |
+| Model Run Cert   | 21                                    |
+| Parameters       | 4 per country + 2                     |
+
 
 | Scenario                          | Files | Runs | Countries | Ages | Years  | Rows         |
 | :-------------------------------- | :---: | :--: | :-------: | :--: | :----: | ------------:|
@@ -68,7 +77,6 @@
 |                                   |       |      |           |      |        |  ----------- |
 |                                   |       |      |           |      |        |  950,208,000 |
 
-
 ---
 # Hib
 ---
@@ -76,23 +84,28 @@
 ### JHU-Tam
 
 | Disease          | Hib |
-| :----------------| :----------------------------------------------------------|
-| Folder           | 2010gavi5-JHU-Tam-Hib-stochastic-runs-folder5              |
-| Date Updated     | 2018-05-28                                                 |
+| :----------------| :----------------------------------------------|
+| Folder           | 2010gavi5-JHU-Tam-Hib-stochastic-runs-folder5  |
+| Date Updated     | 2018-05-28                                     |
+| Model Run Cert   | 26                                             |
+| Parameters       | 5343 total - ~56 per country.                  |
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows       |
 | :--------------| :---: | :--: | :-------: | :--: | :----: | ----------:|
-| no-vaccination |  14   | 200  |   98      |  5   |  35    |  3,325,000 |
-| routine-gavi   |  14   | 200  |   73      |  5   |  35    |  3,325,000 |
+| no-vaccination |  14   | 200  |   95      |  5   |  35    |  3,325,000 |
+| routine-gavi   |  14   | 200  |   95      |  5   |  35    |  3,325,000 |
 |                |       |      |           |      |        |  --------- |
 |                |       |      |           |      |        |  6,650,000 |
 
 ### LSHTM-Clark
 
 | Disease          | Hib |
-| :----------------| :----------------------------------------------------------|
-| Folder           | 2010gavi-2-LSHTM-Clark-Hib-stochastic-runs                 |
-| Date Updated     | 2018-02-14                                                 |
+| :----------------| :------------------------------------------|
+| Folder           | 2010gavi-2-LSHTM-Clark-Hib-stochastic-runs |
+| Date Updated     | 2018-02-14                                 |
+| Model Run Cert   | 11                                         |
+| Parameters       | 2 per country                              |
+
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows       |
 | :--------------- | :---: | :--: | :-------: | :--: | :----: | ----------:|
@@ -111,9 +124,12 @@
 ### Harvard-Sweet
 
 | Disease          | HPV |
-| :----------------|:-------------------------------------------------|
-| Folder           | 201804rfp-Harvard-Kim-HPV-stochastic-runs        |
-| Date Updated     | 2018-06-12                                       |
+| :----------------|:-------------------------------------------|
+| Folder           | 201804rfp-Harvard-Kim-HPV-stochastic-runs  |
+| Date Updated     | 2018-06-12                                 |
+| Model Run Cert   | 24                                         |
+| Parameters       | 20                                         |
+
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows    |
 | :------------- | :---: | :--: | :-------: | :--: | :----: | ------: |
@@ -128,6 +144,9 @@
 | :----------------|:----------------------------------------------------|
 | Folder           | 201710gavi-5-Harvard-Sweet-HPV-stochastic-estimates |
 | Date Updated     | 2018-07-31                                          |
+| Model Run Cert   | 34                                                  |
+| Parameters       | 18 per country                                      |
+
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows        |
 | :------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -140,9 +159,12 @@
 ### LSHTM-Jit
 
 | Disease          | HPV |
-| :----------------|:----------------------------------------------------|
-| Folder           | 201710gavi-5-LSHTM-Jit-HPV-Stochastic-run           |
-| Date Updated     | 2018-07-18                                          |
+| :----------------|:-------------------------------------------|
+| Folder           | 201710gavi-5-LSHTM-Jit-HPV-Stochastic-run  |
+| Date Updated     | 2018-07-18                                 |
+| Model Run Cert   | 7                                          |
+| Parameters       | 2 per country (incidence, mortality?)      |
+
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows        |
 | :------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -164,9 +186,12 @@
 ### OUCRU-Clapham
 
 | Disease          | JE |
-| :----------------|:----------------------------------------------------|
-| Folder           | 201710gavi-2-OUCRU-Clapham-JE-stochastic-runs       |
-| Date Updated     | 2018-01-12                                          |
+| :----------------|:----------------------------------------------|
+| Folder           | 201710gavi-2-OUCRU-Clapham-JE-stochastic-runs |
+| Date Updated     | 2018-01-12                                    |
+| Model Run Cert   | 4                                             |
+| Parameters       | 1 per country (2 for IDN, 3 for IND)  + 3     |
+
 
 | Scenario          | Files | Runs | Countries | Ages | Years  | Rows        |
 | :---------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -180,6 +205,8 @@
 | :----------------|:----------------------------------------------------|
 | Folder           | 201710gavi-6-OUCRU-Clapham-JE-stochastic-full-runs  |
 | Date Updated     | 2019-01-11                                          |
+| Model Run Cert   | 46                                                  |
+| Parameters       | 1 per country (2 for IDN, 3 for IND)  + 3     |
 
 | Scenario          | Files | Runs | Countries | Ages | Years  | Rows        |
 | :---------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -193,9 +220,12 @@
 ### UND-Moore
 
 | Disease          | JE |
-| :----------------|:----------------------------------------------------|
-| Folder           | 201710gavi6-UND-Moore-JE-Stochastic-full-runs       |
-| Date Updated     | 2018-12-20                                          |
+| :----------------|:----------------------------------------------|
+| Folder           | 201710gavi6-UND-Moore-JE-Stochastic-full-runs |
+| Date Updated     | 2018-12-20                                    |
+| Model Run Cert   | 44                                            |
+| Parameters       | 1 per country + 2                             |
+
 
 | Scenario          | Files | Runs | Countries | Ages | Years  | Rows        |
 | :---------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -215,9 +245,12 @@
 ### LSHTM-Jit
 
 | Disease          | Measles |
-| :----------------|:----------------------------------------------------|
-| Folder           | 201710gavi-5-LSHTM-Jit-Measles-Stochastic-run       |
-| Date Updated     | 2018-08-08                                          |
+| :----------------|:----------------------------------------------|
+| Folder           | 201710gavi-5-LSHTM-Jit-Measles-Stochastic-run |
+| Date Updated     | 2018-08-08                                    |
+| Model Run Cert   | 10                                            |
+| Parameters       | 4                                             |
+
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows        |
 | :------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -231,9 +264,12 @@
 ### PSU-Ferrari
 
 | Disease          | Measles |
-| :----------------|:----------------------------------------------------|
-| Folder           | 201710gavi-5-PSU-Ferrari-Measles-stochastic-runs    |
-| Date Updated     | 2018-07-09                                          |
+| :----------------|:-------------------------------------------------|
+| Folder           | 201710gavi-5-PSU-Ferrari-Measles-stochastic-runs |
+| Date Updated     | 2018-07-09                                       |
+| Model Run Cert   | 18                                               |
+| Parameters       | 3 per country                                    |
+
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows        |
 | :------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -254,6 +290,9 @@
 | :----------------|:----------------------------------------------------|
 | Folder           | 201710gavi-2-Cambridge-Trotter-MenA-stochastic-runs |
 | Date Updated     | 2018-02-23                                          |
+| Model Run Cert   | 6                                                   |
+| Parameters       | 1 per country + 1 (year?)                           |
+
 
 | Scenario       | Files | Runs | Countries | Ages | Years  | Rows        |
 | :------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -266,9 +305,12 @@
 ### KPW-Jackson
 
 | Disease          | MenA |
-| :----------------|:-----------------------------------------------------------|
-| Folder           | 201710gavi-3-KPW-Jackson-MenA-stochastic-runs              |
-| Date Updated     | 2018-01-16                                                 |
+| :----------------|:----------------------------------------------|
+| Folder           | 201710gavi-3-KPW-Jackson-MenA-stochastic-runs |
+| Date Updated     | 2018-01-16                                    |
+| Model Run Cert   | 1                                             |
+| Parameters       | 7                                             |
+
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows        |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | -----------:|
@@ -285,23 +327,28 @@
 ### JHU-Tam
 
 | Disease          | PCV |
-|:-----------------|:-----------------------------------------------------------|
-| Folder           | 2010gavi5-JHU-Tam-PCV-stochastic-runs-folder5              |
-| Date Updated     | 2018-05-28                                                 |
+|:-----------------|:----------------------------------------------|
+| Folder           | 2010gavi5-JHU-Tam-PCV-stochastic-runs-folder5 |
+| Date Updated     | 2018-05-28                                    |
+| Model Run Cert   | 27                                            |
+| Parameters       | 5343 total - ~56 per country.                 |
+
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows       |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | ----------:|
-| no-vaccination   |  14   | 200  |   98      |  5   |  35    |  3,325,000 |
-| routine-gavi     |  14   | 200  |   73      |  5   |  35    |  3,325,000 |
+| no-vaccination   |  14   | 200  |   95      |  5   |  35    |  3,325,000 |
+| routine-gavi     |  14   | 200  |   95      |  5   |  35    |  3,325,000 |
 |                  |       |      |           |      |        |  --------- |
 |                  |       |      |           |      |        |  6,650,000 |
 
 ### LSHTM-Clark
 
 | Disease          | PCV |
-|:-----------------|:-----------------------------------------------------------|
-| Folder           | 2010gavi-4-LSHTM-Clark-PCV-stochastic-runs                 |
-| Date Updated     | 2018-02-19                                                 |
+|:-----------------|:-------------------------------------------|
+| Folder           | 2010gavi-4-LSHTM-Clark-PCV-stochastic-runs |
+| Date Updated     | 2018-02-19                                 |
+| Model Run Cert   | 13                                         |
+| Parameters       | 2 per country (efficacy, mortality?)       |
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows       |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | ----------:|
@@ -320,9 +367,12 @@
 ### Emory-Lopman
 
 | Disease          | Rota |
-|:-----------------|:----------------------------------------------------|
-| Folder           | 201804rfp-Emory-Lopman-Rota-stochastic-runs         |
-| Date Updated     | 2018-06-13                                          |
+|:-----------------|:--------------------------------------------|
+| Folder           | 201804rfp-Emory-Lopman-Rota-stochastic-runs |
+| Date Updated     | 2018-06-13                                  |
+| Model Run Cert   | 25                                          |
+| Parameters       | 19                                          |
+
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows     |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | --------:|
@@ -334,9 +384,11 @@
 * 7 age bands - 0,1,2,3,4, 5-29, 30+
 
 | Disease          | Rota |
-|:-----------------|:-----------------------------------------------------------|
-| Folder           | 201710gavi5-Emory-Lopman-rota-stochastic-test-runs         |
-| Date Updated     | 2018-11-01                                                 |
+|:-----------------|:---------------------------------------------------|
+| Folder           | 201710gavi5-Emory-Lopman-rota-stochastic-test-runs |
+| Date Updated     | 2018-11-01                                         |
+| Model Run Cert   | 41                                                 |
+| Parameters       | 16 + 115 per country                               |
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows     |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | --------:|
@@ -348,23 +400,27 @@
 ### JHU-Tam
 
 | Disease          | Rota |
-|:-----------------|:-----------------------------------------------------------|
-| Folder           | 2010gavi5-JHU-Tam-Rota-stochastic-runs-folder5             |
-| Date Updated     | 2018-05-28                                                 |
+|:-----------------|:-----------------------------------------------|
+| Folder           | 2010gavi5-JHU-Tam-Rota-stochastic-runs-folder5 |
+| Date Updated     | 2018-05-28                                     |
+| Model Run Cert   | 29                                             |
+| Parameters       | 5343 total - ~56 per country.                  |
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows       |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | ----------:|
-| no-vaccination   |  14   | 200  |   98      |  5   |  35    |  3,325,000 |
-| routine-gavi     |  14   | 200  |   73      |  5   |  35    |  3,325,000 |
+| no-vaccination   |  14   | 200  |   95      |  5   |  35    |  3,325,000 |
+| routine-gavi     |  14   | 200  |   95      |  5   |  35    |  3,325,000 |
 |                  |       |      |           |      |        |  --------- |
 |                  |       |      |           |      |        |  6,650,000 |
 
 ### LSHTM-Clark
 
 | Disease          | Rota |
-|:-----------------|:-----------------------------------------------------------|
-| Folder           | 2010gavi-2-LSHTM-Clark-Rota-stochastic-runs                |
-| Date Updated     | 2018-02-14                                                 |
+|:-----------------|:--------------------------------------------|
+| Folder           | 2010gavi-2-LSHTM-Clark-Rota-stochastic-runs |
+| Date Updated     | 2018-02-14                                  |
+| Model Run Cert   | 12                                          |
+| Parameters       | 2 per country                               |
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows       |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | ----------:|
@@ -377,13 +433,14 @@
 # Rubella
 ---
 
-
 ### JHU-Lessler
 
 | Disease          | Rubella |
-|:-----------------|:-----------------------------------------------------------|
-| Folder           | 201710gavi5-JHU-Lessler-Rubella-stochastic-full-runs       |
-| Date Updated     | 2019-01-03                                                 |
+|:-----------------|:-----------------------------------------------------|
+| Folder           | 201710gavi5-JHU-Lessler-Rubella-stochastic-full-runs |
+| Date Updated     | 2019-01-03                                           |
+| Model Run Cert   | 42                                                   |
+| Parameters       | 1 per country                                        |
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows        |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | -----------:|
@@ -400,9 +457,11 @@
 ### PHE-Vynnycky
 
 | Disease          | Rubella |
-|:-----------------|:-----------------------------------------------------------|
-| Folder           | 201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run           |
-| Date Updated     | 2018-01-20                                                 |
+|:-----------------|:-------------------------------------------------|
+| Folder           | 201710gavi-5-PHE-Vynnycky-Rubella-stochastic-run |
+| Date Updated     | 2018-01-20                                       |
+| Model Run Cert   | 3                                                |
+| Parameters       | 5                                                |
 
 | Scenario         | Files | Runs | Countries | Ages | Years  | Rows        |
 | :----------------| :---: | :--: | :-------: | :--: | :----: | -----------:|
@@ -420,9 +479,11 @@
 ### IC-Garske
 
 | Disease          | YF |
-| :----------------|:----------------------------------------------------|
-| Folder           | 201710gavi-2-IC-Garske-YF-stochastic-runs3          |
-| Date Updated     | 2018-04-06                                          |
+| :----------------|:-------------------------------------------|
+| Folder           | 201710gavi-2-IC-Garske-YF-stochastic-runs3 |
+| Date Updated     | 2018-04-06                                 |
+| Model Run Cert   | 20                                         |
+| Parameters       | 1 per country + 2                          |
 
 | Scenario          | Files | Runs | Countries | Ages | Years  | Rows        |
 | :---------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
@@ -435,9 +496,11 @@
 ### UND-Perkins
 
 | Disease          | YF |
-|:-----------------|:----------------------------------------------------|
-| Folder           | 201710gavi5-UND-Perkins-YF-Stochastic-full-runs     |
-| Date Updated     | 2019-01-03                                          |
+|:-----------------|:------------------------------------------------|
+| Folder           | 201710gavi5-UND-Perkins-YF-Stochastic-full-runs |
+| Date Updated     | 2019-01-03                                      |
+| Model Run Cert   | 45                                              |
+| Parameters       | 3 per country                                   |
 
 | Scenario          | Files | Runs | Countries | Ages | Years  | Rows        |
 | :---------------- | :---: | :--: | :-------: | :--: | :----: | ----------: |
